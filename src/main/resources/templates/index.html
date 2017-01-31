@@ -23,12 +23,13 @@
                                 </p>
                                 <ul class="nav nav-tabs">
                                     <li class="active">
-                                        <a data-toggle="tab" href="#setup">Heroku Free Plan</a></li>
+                                        <a data-toggle="tab" href="#setup">Free Plan</a></li>
                                     <li><a data-toggle="tab" href="#git">Folder .git</a></li>
                                     <li><a data-toggle="tab" href="#procfile">Procfile</a></li>
-                                    <li><a data-toggle="tab" href="#git2">Git repository</a></li>
+                                    <li><a data-toggle="tab" href="#git2">Git</a></li>
                                     <li><a data-toggle="tab" href="#heroku">Heroku applicatie</a></li>
-                                    <li><a data-toggle="tab" href="#deploy">Deployen</a></li>
+                                    <li><a data-toggle="tab" href="#lokaal">Lokaal deployen</a></li>
+                                    <li><a data-toggle="tab" href="#remote">Remote deployen</a></li>
                                     <li><a data-toggle="tab" href="#meer">Meer info</a></li>
                                 </ul>
 
@@ -115,13 +116,15 @@
                                             Zoek de file <code>applications.properties</code> in de project folder en
                                             wijzig de Mongodb URI.
                                             Gebruik een tool zoals <a href="https://robomongo.org/">RoboMongo</a> om te
-                                            connecteren met de Heroku Mongo databank. Maak daar de gepast databank aan
-                                            (= laatste woord achter de slash in de URI)
+                                            connecteren met de Heroku Mongo databank. Hier zal je straks een nieuwe
+                                            collectie "users" zien verschijnen met daarin één gebruiker met credentials
+                                        <p><code>username: dummy@kdg.be</code></p>
+                                        <p><code>password: dummy</code></p>
                                         </p>
                                         <p>Ga naar de volgende stap</p>
                                     </div>
-                                    <div id="deploy" class="tab-pane fade">
-                                        <h3>Deploy</h3>
+                                    <div id="lokaal" class="tab-pane fade">
+                                        <h3>Lokale Deploy</h3>
                                         <p>
                                             Je kan volgende stap ook weer het makkelijkst vanuit de console doen. Een
                                             andere mogelijkheid is om ook weer sommige stappen via de website van Heroku
@@ -137,9 +140,21 @@
                                         lokaal testen.
 
                                         <p><code>heroku local</code></p>
-
-                                        Open een browser op <a href="http://localhost:8080">http://localhost:8080</a>
+                                        <p>
+                                            Open een browser op <a
+                                                href="http://localhost:5000">http://localhost:5000</a>.
+                                            Een standaard Spring Boot applicatie draait op poort 8080, maar Heroku doet
+                                            ze
+                                            lokaal op poort 5000 draaien. Dit wordt wel vermeld in de output in de
+                                            console.
+                                        <p>
+                                            Je zou moeten kunnen inloggen met de credentials van uit stap de vorige
+                                            stap.
                                         </p>
+                                        </p>
+                                    </div>
+                                    <div id="remote" class="tab-pane fade">
+                                        <h3>Remote Deploy</h3>
                                         <p>
                                             Nu gaan we de app <strong>remote laten draaien</strong> bij Heroku. We
                                             verwijderen eerst alle onnodige files dus we moeten eerst een clean project
@@ -153,7 +168,12 @@
                                         de console zal je zien dat het project meteen gebuild wordt.
 
                                         Als alles goed gegaan, is kan je nu dit doen: <code>heroku open</code>
+                                        <p>
+                                            Je moet wel even geduld hebben, maar als het echt te lang duurt en na een
+                                            refresh nog niet lukt heb je waarschijnlijk fouten gemaakt. Bekijk de online
+                                            log files met:
                                         </p>
+                                        <p><code>heroku logs</code> of <code>heroku logs --tail</code></p>
                                     </div>
                                     <div id="meer" class="tab-pane fade">
                                         <h3>Meer informatie</h3>
