@@ -2,7 +2,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/html"
       layout:decorator="base">
 <head>
-    <th:title>Home pagina</th:title>
+    <title>Integratie Project</title>
 </head>
 <body>
 <div layout:fragment="content">
@@ -41,10 +41,38 @@
                                             en maak een account. Log vervolgens in met je account.
                                         </p>
                                         <p>
-                                            Ga nu naar <a
-                                                href=" https://dashboard.heroku.com/account/billing">billing</a>
-                                            en geef je kredietkaart gegevens in. Doe dit nu meteen want anders loop je
-                                            straks vast.
+                                            Je zal voor je project ook een <strong>databank</strong> nodig hebben.
+                                            Er zijn nu drie mogelijkheden:
+                                        </p>
+                                        <p>
+                                        <ol class="list-group">
+                                            <li class="list-group-item">
+                                                1. Je werkt met een H2 in-memory databank zoals in het Repair Cafe.
+                                                Je zal in Spring (Boot) een extra dependency moeten toevoegen. Meer
+                                                informatie vind je <a
+                                                    href="http://shengwangi.blogspot.be/2016/02/how-to-use-h2-embeded-database-in-spring.html">hier</a>.
+                                            </li>
+                                            <li class="list-group-item">2. Je gaat op zoek naar een <strong>gratis online provider</strong> van een
+                                                databank. De koppeling met een Spring Boot Applicatie is heel makkelijk
+                                                te realiseren via de <code>application.properties</code> file.
+                                                Bijvoorbeeld: voor MongoDB is er <a
+                                                        href="https://mlab.com/home">mLab</a>.
+                                                Deze is beschikbaar als add-on van Heroku (zie puntje 3)
+                                            </li>
+                                            <li class="list-group-item">
+                                                3. Je kan ook extra add-ons (o.a. databanken) toevoegen aan je Heroku
+                                                account.
+                                                Het probleem is dat je hiervoor eerst je kredietkaart gegevens moet
+                                                instellen,
+                                                ook al zijn de add-ons gratis. Je mag dit doen op <strong>eigen
+                                                verantwoordelijkheid</strong>,
+                                                maar we verplichten dit niet.
+                                                Wil je toch voor deze optie gaan, ga dan nu naar <a
+                                                    href=" https://dashboard.heroku.com/account/billing">billing</a>
+                                                en geef je kredietkaart gegevens in. Doe dit nu meteen want anders loop
+                                                je straks vast.
+                                            </li>
+                                        </ol>
                                         </p>
                                         <p>
                                             Installeer de gepaste <a

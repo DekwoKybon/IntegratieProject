@@ -2,7 +2,11 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
-<head th:replace="fragments/head :: head"></head>
+<head>
+    <title layout:title-pattern="$CONTENT_TITLE">Layout Title will be replaced by Page Title!</title>
+
+    <object th:include="fragments/head :: head" th:remove="tag" />
+</head>
 
 <body>
 
